@@ -1,0 +1,18 @@
+04.svg
+  h_3ea2cf1234c8ea 43-55,77,113-120
+hero.svg
+  h_3ea2cf1234c8ea 43-55,77,113-120
+hero_v3.svg
+  h_3ea2cf1234c8ea 1-513
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "9d68579539d52787f6c5fc63275efbb871380149",
+  "prompts": {},
+  "humans": {
+    "h_3ea2cf1234c8ea": {
+      "author": "Skydiver795 <skydiver795@gmail.com>"
+    }
+  }
+}
