@@ -40,6 +40,19 @@
       </feMerge>
     </filter>
 
+    <!-- Subtitle Metallic Shimmer Gradient -->
+    <linearGradient id="subtitleShimmer" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8a8f98">
+        <animate attributeName="stop-color" values="#8a8f98; #25f4ee; #fe2c55; #8a8f98" dur="4.5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#ffffff">
+        <animate attributeName="stop-color" values="#ffffff; #25f4ee; #ffffff; #fe2c55; #ffffff" dur="4.5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#8a8f98">
+        <animate attributeName="stop-color" values="#8a8f98; #fe2c55; #25f4ee; #8a8f98" dur="4.5s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
     <!-- Scanline Tear Clip Slices for Glitch Snapping -->
     <clipPath id="glitchSliceTop">
       <rect x="0" y="20" width="680" height="36">
@@ -61,7 +74,7 @@
   <style>
     .mono-meta { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; font-size: 10px; font-weight: 700; letter-spacing: 2.2px; fill: #8a8f98; text-transform: uppercase; }
     .wordmark-main { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-size: 70px; font-weight: 900; letter-spacing: -2.2px; }
-    .submark { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; font-size: 13.5px; font-weight: 700; letter-spacing: 11px; fill: #d1d5db; text-transform: uppercase; }
+    .submark { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 700; letter-spacing: 7px; text-transform: uppercase; }
   </style>
 
   <!-- 1. TIKTOK API CHROMATIC ABERRATION GLITCH WORDMARK -->
@@ -97,10 +110,14 @@
     </text>
   </g>
 
-  <!-- 2. REVERSED ENGINE (CLEAN MONOSPACE WITH LETTER-SPACING BREATHING) -->
-  <text x="340" y="128" text-anchor="middle" class="submark">
-    REVERSED ENGINE
-    <animate attributeName="letter-spacing" values="11px; 12.5px; 11px" dur="4.2s" repeatCount="indefinite"/>
+  <!-- 2. PRIVATE PROTOCOL SUITE (METALLIC SHIMMER & SYNCHRONIZED MICRO-GLITCH) -->
+  <text x="340" y="127" text-anchor="middle" class="submark" fill="url(#subtitleShimmer)">
+    PRIVATE PROTOCOL SUITE
+    <animate attributeName="dx" dur="3.8s" repeatCount="indefinite"
+      keyTimes="0; 0.28; 0.30; 0.32; 0.34; 0.70; 0.72; 0.74; 0.76; 1"
+      values="0; 0; -3; 2; 0; 0; 3; -2; 0; 0" />
+    <animate attributeName="opacity" dur="4.5s" repeatCount="indefinite"
+      values="0.82; 1.0; 0.82" />
   </text>
 
   <!-- 3. COLOR-CODED TECH SUITE HIGHLIGHTS -->
