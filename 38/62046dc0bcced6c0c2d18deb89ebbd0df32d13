@@ -1,0 +1,14 @@
+tiktok_hero_v2.svg
+  h_3ea2cf1234c8ea 1-590
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "3862046dc0bcced6c0c2d18deb89ebbd0df32d13",
+  "prompts": {},
+  "humans": {
+    "h_3ea2cf1234c8ea": {
+      "author": "Skydiver795 <skydiver795@gmail.com>"
+    }
+  }
+}
