@@ -1,0 +1,16 @@
+03.svg
+  h_3ea2cf1234c8ea 2,4-15,17-37,44-47,49-50,55-60,64-70,73-103,105-106,110-163,165,167-209,213-223,227-588
+tiktok_hero.svg
+  h_3ea2cf1234c8ea 2,4-15,17-37,44-47,49-50,55-60,64-70,73-103,105-106,110-163,165,167-209,213-223,227-588
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "bac85e7881f0c84bebdc271a65e77985e7aa047c",
+  "prompts": {},
+  "humans": {
+    "h_3ea2cf1234c8ea": {
+      "author": "Skydiver795 <skydiver795@gmail.com>"
+    }
+  }
+}
