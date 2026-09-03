@@ -40,15 +40,12 @@
     </clipPath>
 
     <!-- Background Subtle Radial Aura -->
-    <radialGradient id="bgCenterGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#5e6ad2" stop-opacity="0.10"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
-    </radialGradient>
+    
   </defs>
 
   <!-- Deep Obsidian Void Canvas (#000000) -->
-  <rect width="1400" height="460" fill="#000000"/>
-  <circle cx="700.0" cy="230.0" r="380" fill="url(#bgCenterGlow)"/>
+  
+  
 
   
   <g transform="translate(642.0, 129.0) rotate(-6)">
