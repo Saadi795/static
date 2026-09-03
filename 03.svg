@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1100 220" role="img" aria-label="TikTok API Reversed Hero Banner">
+  <defs>
+    <!-- TikTok Neon Shimmering Typography Gradient -->
+    <linearGradient id="shimmerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF">
+        <animate attributeName="stop-color" values="#FFFFFF;#FE2C55;#25F4EE;#FFFFFF" dur="5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="30%" stop-color="#FE2C55">
+        <animate attributeName="stop-color" values="#FE2C55;#25F4EE;#FFFFFF;#FE2C55" dur="5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="70%" stop-color="#25F4EE">
+        <animate attributeName="stop-color" values="#25F4EE;#FFFFFF;#FE2C55;#25F4EE" dur="5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#FFFFFF">
+        <animate attributeName="stop-color" values="#FFFFFF;#FE2C55;#25F4EE;#FFFFFF" dur="5s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- TikTok Red Laser Guide Beam -->
+    <linearGradient id="laserBeamRed" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FE2C55" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FE2C55" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#FE2C55" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- TikTok Cyan Laser Guide Beam -->
+    <linearGradient id="laserBeamCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#25F4EE" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#25F4EE" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#25F4EE" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Ambient Core Glow Filter -->
+    <filter id="ambientHalo" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="16" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- TikTok Chromatic Aberration Drop Filter -->
+    <filter id="tiktokGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes laserGlideRed {
+      0% { transform: translateX(-300px); }
+      100% { transform: translateX(1100px); }
+    }
+    @keyframes laserGlideCyan {
+      0% { transform: translateX(1100px); }
+      100% { transform: translateX(-300px); }
+    }
+    @keyframes pulseDotCyan {
+      0%, 100% { transform: scale(1); opacity: 0.85; }
+      50% { transform: scale(1.4); opacity: 1; filter: drop-shadow(0 0 8px #25F4EE); }
+    }
+    @keyframes pulseDotRed {
+      0%, 100% { transform: scale(1); opacity: 0.85; }
+      50% { transform: scale(1.4); opacity: 1; filter: drop-shadow(0 0 8px #FE2C55); }
+    }
+    @keyframes cycleStatement1 {
+      0%, 28% { opacity: 1; transform: translateY(0px); }
+      33%, 100% { opacity: 0; transform: translateY(-6px); }
+    }
+    @keyframes cycleStatement2 {
+      0%, 30% { opacity: 0; transform: translateY(6px); }
+      35%, 62% { opacity: 1; transform: translateY(0px); }
+      67%, 100% { opacity: 0; transform: translateY(-6px); }
+    }
+    @keyframes cycleStatement3 {
+      0%, 64% { opacity: 0; transform: translateY(6px); }
+      69%, 95% { opacity: 1; transform: translateY(0px); }
+      100% { opacity: 0; transform: translateY(-6px); }
+    }
+    .hero-bg { fill: #050608; stroke: #23252a; stroke-width: 1.5; }
+    .grid-line { stroke: #16181d; stroke-width: 1; stroke-dasharray: 4 4; }
+    .eyebrow { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; font-size: 11px; font-weight: 700; letter-spacing: 2.4px; fill: #8a8f98; text-transform: uppercase; }
+    .wordmark { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 52px; font-weight: 800; letter-spacing: -2px; fill: url(#shimmerGradient); }
+    .wordmark-red { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 52px; font-weight: 800; letter-spacing: -2px; fill: #FE2C55; opacity: 0.35; }
+    .wordmark-cyan { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 52px; font-weight: 800; letter-spacing: -2px; fill: #25F4EE; opacity: 0.35; }
+    .subtitle { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 14.5px; font-weight: 450; fill: #a1a7b0; }
+    .status-capsule { fill: #0f1013; stroke: #23252a; stroke-width: 1; }
+    .status-text { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; fill: #f7f8f8; }
+  </style>
+
+  <!-- Card Background Panel with Subtle Hairline Border -->
+  <rect x="2" y="2" width="1096" height="216" rx="14" ry="14" class="hero-bg"/>
+
+  <!-- Subtle Blueprint Tech Grid Lines -->
+  <line x1="2" y1="52" x2="1098" y2="52" class="grid-line"/>
+  <line x1="2" y1="168" x2="1098" y2="168" class="grid-line"/>
+  <line x1="260" y1="2" x2="260" y2="218" class="grid-line"/>
+  <line x1="840" y1="2" x2="840" y2="218" class="grid-line"/>
+
+  <!-- Sweeping Cyan & Red Laser Beams -->
+  <g opacity="0.65">
+    <rect x="0" y="51" width="300" height="2" fill="url(#laserBeamCyan)">
+      <animateTransform attributeName="transform" type="translate" from="-300 0" to="1100 0" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="0" y="167" width="300" height="2" fill="url(#laserBeamRed)">
+      <animateTransform attributeName="transform" type="translate" from="1100 0" to="-300 0" dur="4.2s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Ambient Glow Behind Main Wordmark -->
+  <circle cx="550" cy="110" r="140" fill="#FE2C55" opacity="0.10" filter="url(#ambientHalo)"/>
+  <circle cx="590" cy="110" r="140" fill="#25F4EE" opacity="0.10" filter="url(#ambientHalo)"/>
+
+  <!-- Eyebrow Subsystem Badge / Status Indicator -->
+  <g transform="translate(54, 38)">
+    <circle cx="0" cy="-3.5" r="4.5" fill="#25F4EE" style="transform-origin: 0px -3.5px; animation: pulseDotCyan 2.4s ease-in-out infinite;"/>
+    <circle cx="14" cy="-3.5" r="4.5" fill="#FE2C55" style="transform-origin: 14px -3.5px; animation: pulseDotRed 2.4s ease-in-out infinite;"/>
+    <text x="32" y="0" class="eyebrow">TIKTOK REVERSED MOBILE PROTOCOL SUITE • ENTERPRISE CORE</text>
+  </g>
+
+  <!-- Main Wordmark with TikTok Chromatic Offset Glitch -->
+  <g transform="translate(54, 114)">
+    <text x="-2" y="2" class="wordmark-red">TIKTOK REVERSED API</text>
+    <text x="2" y="-2" class="wordmark-cyan">TIKTOK REVERSED API</text>
+    <text x="0" y="0" class="wordmark" filter="url(#tiktokGlow)">TIKTOK REVERSED API</text>
+  </g>
+
+  <!-- Kinetic Cycling Technical Highlights -->
+  <g transform="translate(54, 150)">
+    <g style="animation: cycleStatement1 12s cubic-bezier(0.16, 1, 0.3, 1) infinite;">
+      <text x="0" y="0" class="subtitle">24 SeekSocial-Compatible Endpoints • Libmetasec_ov.so Simon-128 &amp; SM3 • Argus TLB Plugin Neutralized</text>
+    </g>
+    <g style="animation: cycleStatement2 12s cubic-bezier(0.16, 1, 0.3, 1) infinite;">
+      <text x="0" y="0" class="subtitle">BDInstall TTEncrypt Hybrid Cipher • Live Non-Zero Device Registration • odin_tt Mobile Session Engine</text>
+    </g>
+    <g style="animation: cycleStatement3 12s cubic-bezier(0.16, 1, 0.3, 1) infinite;">
+      <text x="0" y="0" class="subtitle">Zero-Proxy Universal Rehydration Extractor • Direct CDN 1080p Streams • 360-Vector Telemetry Shield</text>
+    </g>
+  </g>
+
+  <!-- Live Verified Protocol Pill -->
+  <g transform="translate(862, 28)">
+    <rect x="0" y="0" width="184" height="24" rx="12" ry="12" class="status-capsule"/>
+    <circle cx="14" cy="12" r="3.5" fill="#27a644"/>
+    <text x="26" y="15.5" class="status-text">LIVE WIRE • 100% PROVEN</text>
+  </g>
+</svg>
