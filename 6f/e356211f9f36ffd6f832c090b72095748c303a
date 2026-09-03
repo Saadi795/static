@@ -1,0 +1,14 @@
+yt_banner.svg
+  h_3ea2cf1234c8ea 22-27,29,34-38,40,42,45-59,69,71-85,88-111,115-116,125-126,128-130,132-134,136-138,140-142,144-146,148-150,152-154,156-158
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "6fe356211f9f36ffd6f832c090b72095748c303a",
+  "prompts": {},
+  "humans": {
+    "h_3ea2cf1234c8ea": {
+      "author": "Skydiver795 <skydiver795@gmail.com>"
+    }
+  }
+}
