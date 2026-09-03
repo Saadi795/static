@@ -1,0 +1,14 @@
+01.svg
+  h_7b240bcc5dadc5 5-10,42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "6cf2a2a4db8754a0c58a21cdb5d4b81043fec1b9",
+  "prompts": {},
+  "humans": {
+    "h_7b240bcc5dadc5": {
+      "author": "Saadi795 <saadi@users.noreply.github.com>"
+    }
+  }
+}
