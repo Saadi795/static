@@ -1,0 +1,208 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+  <defs>
+    <!-- Core Gradients -->
+    <linearGradient id="msAzureGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0078d4" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#5e6ad2" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#828fff" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <linearGradient id="cyberCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#4facfe" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#f0f4ff"/>
+      <stop offset="100%" stop-color="#c7d2fe"/>
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f1016" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#07080c" stop-opacity="0.92"/>
+    </linearGradient>
+
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0078d4" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#232634" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#5e6ad2" stop-opacity="0.7"/>
+    </linearGradient>
+
+    <!-- Ambient Glow Filter -->
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="orbBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes laserRun {
+      0% { stroke-dashoffset: 800; }
+      100% { stroke-dashoffset: -800; }
+    }
+    @keyframes beaconPulse {
+      0%, 100% { opacity: 0.3; transform: scale(0.9); }
+      50% { opacity: 0.9; transform: scale(1.15); }
+    }
+    @keyframes orbDrift {
+      0%, 100% { transform: translate(0px, 0px); }
+      50% { transform: translate(30px, -15px); }
+    }
+    @keyframes textShimmer {
+      0%, 100% { opacity: 0.92; }
+      50% { opacity: 1; }
+    }
+
+    .laser-track {
+      stroke-dasharray: 80 220;
+      animation: laserRun 10s linear infinite;
+    }
+    .laser-track-reverse {
+      stroke-dasharray: 60 180;
+      animation: laserRun 8s linear infinite reverse;
+    }
+    .beacon-ring {
+      transform-origin: 75px 48px;
+      animation: beaconPulse 2.8s ease-in-out infinite;
+    }
+    .ambient-orb {
+      animation: orbDrift 9s ease-in-out infinite;
+    }
+    .title-text {
+      animation: textShimmer 4s ease-in-out infinite;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      letter-spacing: -0.5px;
+    }
+    .mono-font {
+      font-family: "JetBrains Mono", "SF Mono", "Fira Code", Menlo, monospace;
+    }
+  </style>
+
+  <!-- Ambient Backdrop Lights -->
+  <g class="ambient-orb" opacity="0.35">
+    <circle cx="600" cy="180" r="140" fill="#0078d4" filter="url(#orbBlur)"/>
+    <circle cx="820" cy="220" r="110" fill="#5e6ad2" filter="url(#orbBlur)"/>
+    <circle cx="380" cy="200" r="100" fill="#06b6d4" filter="url(#orbBlur)"/>
+  </g>
+
+  <!-- Precision Technical Blueprint Gridlines -->
+  <g stroke="#1a1c23" stroke-width="0.75" stroke-opacity="0.45">
+    <line x1="100" y1="70" x2="1100" y2="70" stroke-dasharray="4 8"/>
+    <line x1="100" y1="330" x2="1100" y2="330" stroke-dasharray="4 8"/>
+    <line x1="160" y1="30" x2="160" y2="370" stroke-dasharray="3 9"/>
+    <line x1="1040" y1="30" x2="1040" y2="370" stroke-dasharray="3 9"/>
+  </g>
+
+  <!-- Outer HUD Cyber Frame -->
+  <rect x="40" y="24" width="1120" height="352" rx="14" fill="none" stroke="url(#borderGrad)" stroke-width="1.2"/>
+  <rect x="40" y="24" width="1120" height="352" rx="14" fill="none" stroke="#0078d4" stroke-width="2" opacity="0.6" class="laser-track"/>
+  <rect x="46" y="30" width="1108" height="340" rx="10" fill="none" stroke="#161821" stroke-width="1"/>
+
+  <!-- HUD Corner Brackets & Crosshairs -->
+  <g stroke="#0078d4" stroke-width="1.8" fill="none">
+    <!-- Top-Left -->
+    <path d="M 32 44 L 32 20 L 56 20"/>
+    <circle cx="32" cy="20" r="2" fill="#0078d4"/>
+    <!-- Top-Right -->
+    <path d="M 1168 44 L 1168 20 L 1144 20"/>
+    <circle cx="1168" cy="20" r="2" fill="#0078d4"/>
+    <!-- Bottom-Left -->
+    <path d="M 32 356 L 32 380 L 56 380"/>
+    <circle cx="32" cy="380" r="2" fill="#0078d4"/>
+    <!-- Bottom-Right -->
+    <path d="M 1168 356 L 1168 380 L 1144 380"/>
+    <circle cx="1168" cy="380" r="2" fill="#0078d4"/>
+  </g>
+
+  <!-- Top Status Eyebrow -->
+  <g transform="translate(68, 42)">
+    <!-- Radar Live Beacon -->
+    <circle cx="7" cy="7" r="10" fill="none" stroke="#10b981" stroke-width="1.2" opacity="0.4" class="beacon-ring"/>
+    <circle cx="7" cy="7" r="4.5" fill="#10b981"/>
+
+    <text x="26" y="11" fill="#10b981" font-size="11" font-weight="700" class="mono-font" letter-spacing="1.5">LIVE REVERSED ENGINE</text>
+    <text x="210" y="11" fill="#475569" font-size="11" class="mono-font">//</text>
+    <text x="228" y="11" fill="#94a3b8" font-size="11" class="mono-font" letter-spacing="1">playground.microsoft.ai</text>
+    <text x="430" y="11" fill="#475569" font-size="11" class="mono-font">//</text>
+    <text x="448" y="11" fill="#60a5fa" font-size="11" class="mono-font" letter-spacing="1">tRPC • SSE STREAM • DUPLEX WS</text>
+  </g>
+
+  <!-- Top-Right Telemetry Capsule -->
+  <g transform="translate(900, 38)">
+    <rect x="0" y="0" width="220" height="22" rx="4" fill="#0f111a" stroke="#262b3d" stroke-width="1"/>
+    <text x="110" y="15" fill="#818cf8" font-size="10.5" font-weight="600" text-anchor="middle" class="mono-font" letter-spacing="1">
+      ZERO-BROWSER SDK
+    </text>
+  </g>
+
+  <!-- Main Headline -->
+  <g transform="translate(68, 128)">
+    <!-- Subtitle Category Tag -->
+    <text x="2" y="0" fill="#38bdf8" font-size="12" font-weight="700" class="mono-font" letter-spacing="2.8">
+      AUTONOMOUS MULTI-MODAL REVERSE PLATFORM
+    </text>
+
+    <!-- Main Wordmark -->
+    <text x="0" y="52" fill="url(#textGrad)" font-size="52" font-weight="800" class="title-text" filter="url(#softGlow)">
+      Microsoft AI Playground
+    </text>
+
+    <!-- Architecture Hook Line -->
+    <text x="2" y="86" fill="#94a3b8" font-size="15" font-weight="400" class="title-text">
+      Production Python SDK, CLI &amp; Wispr Flow Dictation Suite for Azure AppService tRPC Backends
+    </text>
+  </g>
+
+  <!-- Feature Telemetry Cards (Bottom Matrix) -->
+  <g transform="translate(68, 252)">
+    <!-- Card 1: mai-image-2.6 -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="204" height="88" rx="8" fill="url(#cardGrad)" stroke="#1e2333" stroke-width="1.2"/>
+      <rect x="0" y="0" width="204" height="2" fill="#0078d4"/>
+      <text x="14" y="24" fill="#38bdf8" font-size="10" font-weight="700" class="mono-font" letter-spacing="1.2">IMAGE DIFFUSION</text>
+      <text x="14" y="46" fill="#f1f5f9" font-size="14" font-weight="700" class="title-text">mai-image-2.6</text>
+      <text x="14" y="68" fill="#64748b" font-size="11" class="mono-font">8K Photoreal • Unrestricted</text>
+    </g>
+
+    <!-- Card 2: mai-transcribe-2 & Wispr Flow -->
+    <g transform="translate(216, 0)">
+      <rect x="0" y="0" width="204" height="88" rx="8" fill="url(#cardGrad)" stroke="#1e2333" stroke-width="1.2"/>
+      <rect x="0" y="0" width="204" height="2" fill="#10b981"/>
+      <text x="14" y="24" fill="#34d399" font-size="10" font-weight="700" class="mono-font" letter-spacing="1.2">SPEECH ASR</text>
+      <text x="14" y="46" fill="#f1f5f9" font-size="14" font-weight="700" class="title-text">mai-transcribe-2</text>
+      <text x="14" y="68" fill="#64748b" font-size="11" class="mono-font">33.7x RTF • 1h+ Audios</text>
+    </g>
+
+    <!-- Card 3: Wispr Flow Mode -->
+    <g transform="translate(432, 0)">
+      <rect x="0" y="0" width="204" height="88" rx="8" fill="url(#cardGrad)" stroke="#1e2333" stroke-width="1.2"/>
+      <rect x="0" y="0" width="204" height="2" fill="#818cf8"/>
+      <text x="14" y="24" fill="#a5b4fc" font-size="10" font-weight="700" class="mono-font" letter-spacing="1.2">REALTIME DICTATION</text>
+      <text x="14" y="46" fill="#f1f5f9" font-size="14" font-weight="700" class="title-text">Wispr Flow Engine</text>
+      <text x="14" y="68" fill="#64748b" font-size="11" class="mono-font">&lt; 1.7s Latency • Multi-Turn</text>
+    </g>
+
+    <!-- Card 4: Emotional TTS -->
+    <g transform="translate(648, 0)">
+      <rect x="0" y="0" width="204" height="88" rx="8" fill="url(#cardGrad)" stroke="#1e2333" stroke-width="1.2"/>
+      <rect x="0" y="0" width="204" height="2" fill="#f59e0b"/>
+      <text x="14" y="24" fill="#fbbf24" font-size="10" font-weight="700" class="mono-font" letter-spacing="1.2">EMOTIONAL TTS</text>
+      <text x="14" y="46" fill="#f1f5f9" font-size="14" font-weight="700" class="title-text">mai-voice-2</text>
+      <text x="14" y="68" fill="#64748b" font-size="11" class="mono-font">43 Voices • 19 Emotions</text>
+    </g>
+
+    <!-- Card 5: Falcon-CaaS 120B -->
+    <g transform="translate(864, 0)">
+      <rect x="0" y="0" width="200" height="88" rx="8" fill="url(#cardGrad)" stroke="#1e2333" stroke-width="1.2"/>
+      <rect x="0" y="0" width="200" height="2" fill="#ec4899"/>
+      <text x="14" y="24" fill="#f472b6" font-size="10" font-weight="700" class="mono-font" letter-spacing="1.2">DUPLEX WEBSOCKET</text>
+      <text x="14" y="46" fill="#f1f5f9" font-size="14" font-weight="700" class="title-text">Falcon-CaaS 120B</text>
+      <text x="14" y="68" fill="#64748b" font-size="11" class="mono-font">GPT-5.4-mini • PCM Stream</text>
+    </g>
+  </g>
+</svg>
