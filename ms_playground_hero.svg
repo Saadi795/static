@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1200 360" role="img" aria-label="Microsoft AI Playground API Hero Banner">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 680 245" role="img" aria-label="Microsoft AI Playground Hero Banner">
   <defs>
-    <!-- Liquid Neon Bloom Filter -->
+    <!-- Equalizer Spectrum Gradients -->
+    <linearGradient id="eqAzure" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#041a33"/>
+      <stop offset="60%" stop-color="#0078d4"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+
+    <linearGradient id="eqViolet" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#1e1338"/>
+      <stop offset="60%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+
+    <linearGradient id="eqCyan" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#062226"/>
+      <stop offset="60%" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+
+    <!-- Glowing Filters -->
     <filter id="neonBloom" x="-30%" y="-30%" width="160%" height="160%">
       <feGaussianBlur in="SourceGraphic" stdDeviation="4.5" result="blur"/>
       <feMerge>
@@ -10,261 +29,430 @@
       </feMerge>
     </filter>
 
-    <!-- Laser Beam Glow Filter -->
-    <filter id="laserGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="blur"/>
+    <filter id="glitchDisplace" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+      <feOffset in="blur" dx="-2.5" dy="0" result="cyanGlow"/>
+      <feOffset in="blur" dx="2.5" dy="0" result="redGlow"/>
       <feMerge>
-        <feMergeNode in="blur"/>
+        <feMergeNode in="cyanGlow"/>
+        <feMergeNode in="redGlow"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
 
-    <!-- Core Gradients -->
-    <linearGradient id="laserAzure" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#0078d4" stop-opacity="0"/>
-      <stop offset="25%" stop-color="#0078d4" stop-opacity="0.9"/>
-      <stop offset="50%" stop-color="#38bdf8" stop-opacity="1"/>
-      <stop offset="75%" stop-color="#828fff" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#828fff" stop-opacity="0"/>
+    <!-- Subtitle Metallic Shimmer Gradient -->
+    <linearGradient id="subtitleShimmer" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8a8f98">
+        <animate attributeName="stop-color" values="#8a8f98; #38bdf8; #818cf8; #8a8f98" dur="4.5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#ffffff">
+        <animate attributeName="stop-color" values="#ffffff; #38bdf8; #ffffff; #818cf8; #ffffff" dur="4.5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#8a8f98">
+        <animate attributeName="stop-color" values="#8a8f98; #818cf8; #38bdf8; #8a8f98" dur="4.5s" repeatCount="indefinite"/>
+      </stop>
     </linearGradient>
 
-    <linearGradient id="laserViolet" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#a855f7" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#6366f1" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#0078d4" stop-opacity="0"/>
-    </linearGradient>
-
-    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="45%" stop-color="#f0f6ff"/>
-      <stop offset="100%" stop-color="#93c5fd"/>
-    </linearGradient>
-
-    <linearGradient id="subTitleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38bdf8"/>
-      <stop offset="50%" stop-color="#818cf8"/>
-      <stop offset="100%" stop-color="#c084fc"/>
-    </linearGradient>
-
-    <linearGradient id="barAzure" x1="0%" y1="100%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="#03254c"/>
-      <stop offset="60%" stop-color="#0078d4"/>
-      <stop offset="100%" stop-color="#38bdf8"/>
-    </linearGradient>
-
-    <linearGradient id="barViolet" x1="0%" y1="100%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="#1e1b4b"/>
-      <stop offset="60%" stop-color="#6366f1"/>
-      <stop offset="100%" stop-color="#a855f7"/>
-    </linearGradient>
-
-    <linearGradient id="barMint" x1="0%" y1="100%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="#022c22"/>
-      <stop offset="60%" stop-color="#10b981"/>
-      <stop offset="100%" stop-color="#6ee7b7"/>
-    </linearGradient>
-
-    <!-- Center Atmospheric Glow -->
-    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#0078d4" stop-opacity="0.16"/>
-      <stop offset="45%" stop-color="#4f46e5" stop-opacity="0.06"/>
+    <!-- Subtle Center Radial Glow -->
+    <radialGradient id="centerAura" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#0078d4" stop-opacity="0.14"/>
+      <stop offset="50%" stop-color="#6366f1" stop-opacity="0.04"/>
       <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
   </defs>
 
   <style>
-    .mono-meta { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; font-size: 10.5px; font-weight: 700; letter-spacing: 3.5px; fill: #64748b; text-transform: uppercase; }
-    .wordmark-main { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-size: 64px; font-weight: 900; letter-spacing: -2px; }
-    .submark { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 700; letter-spacing: 9px; text-transform: uppercase; }
-    .hud-label { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; font-size: 9.5px; font-weight: 700; letter-spacing: 1.5px; fill: #f8fafc; }
-    .hud-sub { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; font-size: 8.5px; font-weight: 600; letter-spacing: 1px; fill: #64748b; }
-    .hex-stream { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; font-size: 9.5px; font-weight: 500; fill: #334155; }
+    .mono-meta { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; font-size: 10px; font-weight: 700; letter-spacing: 2.4px; fill: #8a8f98; text-transform: uppercase; }
+    .wordmark-main { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-size: 66px; font-weight: 900; letter-spacing: -2.2px; }
+    .submark { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; letter-spacing: 6.5px; text-transform: uppercase; }
   </style>
 
-  <!-- 1. AMBIENT ATMOSPHERIC RADIANCE -->
-  <ellipse cx="600" cy="180" rx="420" ry="150" fill="url(#centerGlow)"/>
+  <!-- Ambient Backdrop -->
+  <ellipse cx="340" cy="115" rx="280" ry="110" fill="url(#centerAura)"/>
 
-  <!-- 2. CORNER OPTICAL BRACKETS (PRECISION RED-TEAM / CYBERNETIC AESTHETIC) -->
-  <g stroke="#1e293b" stroke-width="1.5" fill="none">
-    <!-- Top-Left -->
-    <path d="M 32 52 L 32 32 L 52 32" />
-    <circle cx="32" cy="32" r="2.5" fill="#0078d4" />
-    <!-- Top-Right -->
-    <path d="M 1168 52 L 1168 32 L 1148 32" />
-    <circle cx="1168" cy="32" r="2.5" fill="#818cf8" />
-    <!-- Bottom-Left -->
-    <path d="M 32 308 L 32 328 L 52 328" />
-    <circle cx="32" cy="328" r="2.5" fill="#0078d4" />
-    <!-- Bottom-Right -->
-    <path d="M 1168 308 L 1168 328 L 1148 328" />
-    <circle cx="1168" cy="328" r="2.5" fill="#818cf8" />
+  <!-- 1. CORNER OPTICAL BRACKETS -->
+  <g stroke="#23252a" stroke-width="1.5" fill="none">
+    <path d="M 24 40 L 24 24 L 40 24" />
+    <circle cx="24" cy="24" r="2" fill="#0078d4" />
+    <path d="M 656 40 L 656 24 L 640 24" />
+    <circle cx="656" cy="24" r="2" fill="#818cf8" />
+    <path d="M 24 205 L 24 221 L 40 221" />
+    <circle cx="24" cy="221" r="2" fill="#0078d4" />
+    <path d="M 656 205 L 656 221 L 640 221" />
+    <circle cx="656" cy="221" r="2" fill="#818cf8" />
   </g>
 
-  <!-- Blueprint Technical Axis Guides -->
-  <line x1="80" y1="180" x2="210" y2="180" stroke="#1e293b" stroke-width="1" stroke-dasharray="4 6"/>
-  <line x1="990" y1="180" x2="1120" y2="180" stroke="#1e293b" stroke-width="1" stroke-dasharray="4 6"/>
-
-  <!-- 3. TRAVELING SCANNER LASER BEAMS -->
-  <g opacity="0.7" filter="url(#laserGlow)">
-    <rect x="0" y="31" width="380" height="2" fill="url(#laserAzure)">
-      <animateTransform attributeName="transform" type="translate" from="-380 0" to="1200 0" dur="4.2s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="0" y="327" width="380" height="2" fill="url(#laserViolet)">
-      <animateTransform attributeName="transform" type="translate" from="1200 0" to="-380 0" dur="4.8s" repeatCount="indefinite"/>
-    </rect>
-  </g>
-
-  <!-- 4. LEFT KINETIC MECHANISM: CONCENTRIC REASONING & INFERENCE RADAR -->
-  <g transform="translate(138, 180)">
-    <!-- Outer Azure Rotating Ring (CW) -->
-    <circle cx="0" cy="0" r="64" fill="none" stroke="#0078d4" stroke-width="1.8" stroke-dasharray="16 10" opacity="0.85">
-      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="16s" repeatCount="indefinite"/>
-    </circle>
-    <!-- Middle Violet Segmented Ring (CCW) -->
-    <circle cx="0" cy="0" r="48" fill="none" stroke="#818cf8" stroke-width="1.6" stroke-dasharray="8 6 2 6" opacity="0.85">
-      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="10s" repeatCount="indefinite"/>
-    </circle>
-    <!-- Innermost Static Ring -->
-    <circle cx="0" cy="0" r="30" fill="none" stroke="#1e293b" stroke-width="1.2"/>
-    <!-- Pulsing Neural Nucleus Core -->
-    <circle cx="0" cy="0" r="8" fill="#38bdf8" opacity="0.95" filter="url(#neonBloom)">
-      <animate attributeName="r" values="7; 10.5; 7" dur="2.2s" repeatCount="indefinite"/>
-      <animate attributeName="fill" values="#38bdf8; #818cf8; #38bdf8" dur="2.2s" repeatCount="indefinite"/>
-    </circle>
-    <!-- Crosshairs -->
-    <line x1="-74" y1="0" x2="74" y2="0" stroke="#1e293b" stroke-width="1"/>
-    <line x1="0" y1="-74" x2="0" y2="74" stroke="#1e293b" stroke-width="1"/>
-    <!-- Reticle Telemetry Annotations -->
-    <text x="0" y="-76" text-anchor="middle" class="mono-meta" style="font-size: 7.5px; fill: #475569;">FALCON-CaaS</text>
-    <text x="0" y="84" text-anchor="middle" class="mono-meta" style="font-size: 7.5px; fill: #475569;">mai-thinking-1</text>
-    <text x="-78" y="3" text-anchor="end" class="mono-meta" style="font-size: 7px; fill: #38bdf8;">tRPC</text>
-    <text x="78" y="3" text-anchor="start" class="mono-meta" style="font-size: 7px; fill: #818cf8;">DUPLEX</text>
-  </g>
-
-  <!-- 5. RIGHT KINETIC MECHANISM: REALTIME SPEECH SPECTRUM & TELEMETRY STACK -->
-  <g transform="translate(1010, 88)">
-    <!-- Pill 1: mai-transcribe-2 33.7x RTF -->
-    <g transform="translate(0, 0)">
-      <rect x="0" y="0" width="158" height="26" rx="5" fill="#090d16" stroke="#1e293b" stroke-width="1"/>
-      <circle cx="12" cy="13" r="3.5" fill="#10b981">
-        <animate attributeName="opacity" values="0.3; 1; 0.3" dur="1.8s" repeatCount="indefinite"/>
-      </circle>
-      <text x="24" y="16.5" class="hud-label">mai-transcribe-2</text>
-      <text x="146" y="16.5" text-anchor="end" class="hud-sub" style="fill: #34d399;">33.7x</text>
-    </g>
-
-    <!-- Pill 2: Wispr Flow Mode -->
-    <g transform="translate(0, 34)">
-      <rect x="0" y="0" width="158" height="26" rx="5" fill="#090d16" stroke="#0078d4" stroke-width="1" stroke-opacity="0.6"/>
-      <circle cx="12" cy="13" r="3.5" fill="#38bdf8">
-        <animate attributeName="opacity" values="0.4; 1; 0.4" dur="2.1s" repeatCount="indefinite"/>
-      </circle>
-      <text x="24" y="16.5" class="hud-label">WISPR FLOW</text>
-      <text x="146" y="16.5" text-anchor="end" class="hud-sub" style="fill: #38bdf8;">&lt;1.7s</text>
-    </g>
-
-    <!-- Pill 3: 120B Falcon-CaaS -->
-    <g transform="translate(0, 68)">
-      <rect x="0" y="0" width="158" height="26" rx="5" fill="#090d16" stroke="#1e293b" stroke-width="1"/>
-      <circle cx="12" cy="13" r="3.5" fill="#818cf8">
-        <animate attributeName="opacity" values="0.3; 1; 0.3" dur="2.4s" repeatCount="indefinite"/>
-      </circle>
-      <text x="24" y="16.5" class="hud-label">FALCON 120B</text>
-      <text x="146" y="16.5" text-anchor="end" class="hud-sub" style="fill: #818cf8;">REALTIME</text>
-    </g>
-
-    <!-- Pill 4: 8K Diffusion -->
-    <g transform="translate(0, 102)">
-      <rect x="0" y="0" width="158" height="26" rx="5" fill="#090d16" stroke="#1e293b" stroke-width="1"/>
-      <circle cx="12" cy="13" r="3.5" fill="#f59e0b">
-        <animate attributeName="opacity" values="0.4; 1; 0.4" dur="1.9s" repeatCount="indefinite"/>
-      </circle>
-      <text x="24" y="16.5" class="hud-label">mai-image-2.6</text>
-      <text x="146" y="16.5" text-anchor="end" class="hud-sub" style="fill: #fbbf24;">8K DIFF</text>
-    </g>
-
-    <!-- Dynamic Audio Spectrum Equalizer (8 Vertical Bars) -->
-    <g transform="translate(4, 142)">
-      <!-- Bar 1 -->
-      <rect x="0" y="0" width="6" height="34" rx="3" fill="url(#barAzure)">
-        <animate attributeName="height" values="12; 34; 18; 28; 12" dur="1.1s" repeatCount="indefinite"/>
-        <animate attributeName="y" values="22; 0; 16; 6; 22" dur="1.1s" repeatCount="indefinite"/>
-      </rect>
-      <!-- Bar 2 -->
-      <rect x="18" y="0" width="6" height="34" rx="3" fill="url(#barViolet)">
-        <animate attributeName="height" values="28; 14; 34; 18; 28" dur="1.35s" repeatCount="indefinite"/>
-        <animate attributeName="y" values="6; 20; 0; 16; 6" dur="1.35s" repeatCount="indefinite"/>
-      </rect>
-      <!-- Bar 3 -->
-      <rect x="36" y="0" width="6" height="34" rx="3" fill="url(#barAzure)">
-        <animate attributeName="height" values="16; 30; 14; 34; 16" dur="0.95s" repeatCount="indefinite"/>
-        <animate attributeName="y" values="18; 4; 20; 0; 18" dur="0.95s" repeatCount="indefinite"/>
-      </rect>
-      <!-- Bar 4 -->
-      <rect x="54" y="0" width="6" height="34" rx="3" fill="url(#barMint)">
-        <animate attributeName="height" values="34; 18; 28; 12; 34" dur="1.25s" repeatCount="indefinite"/>
-        <animate attributeName="y" values="0; 16; 6; 22; 0" dur="1.25s" repeatCount="indefinite"/>
-      </rect>
-      <!-- Bar 5 -->
-      <rect x="72" y="0" width="6" height="34" rx="3" fill="url(#barMint)">
-        <animate attributeName="height" values="14; 34; 16; 28; 14" dur="1.05s" repeatCount="indefinite"/>
-        <animate attributeName="y" values="20; 0; 18; 6; 20" dur="1.05s" repeatCount="indefinite"/>
-      </rect>
-      <!-- Bar 6 -->
-      <rect x="90" y="0" width="6" height="34" rx="3" fill="url(#barViolet)">
-        <animate attributeName="height" values="30; 16; 34; 14; 30" dur="1.3s" repeatCount="indefinite"/>
-        <animate attributeName="y" values="4; 18; 0; 20; 4" dur="1.3s" repeatCount="indefinite"/>
-      </rect>
-      <!-- Bar 7 -->
-      <rect x="108" y="0" width="6" height="34" rx="3" fill="url(#barAzure)">
-        <animate attributeName="height" values="18; 28; 12; 34; 18" dur="1.15s" repeatCount="indefinite"/>
-        <animate attributeName="y" values="16; 6; 22; 0; 16" dur="1.15s" repeatCount="indefinite"/>
-      </rect>
-      <!-- Bar 8 -->
-      <rect x="126" y="0" width="6" height="34" rx="3" fill="url(#barViolet)">
-        <animate attributeName="height" values="24; 14; 30; 16; 24" dur="1.4s" repeatCount="indefinite"/>
-        <animate attributeName="y" values="10; 20; 4; 18; 10" dur="1.4s" repeatCount="indefinite"/>
-      </rect>
-    </g>
-
-    <!-- Hex Subtext -->
-    <text x="74" y="196" text-anchor="middle" class="hex-stream">0x7F 0x45 0x4C 0x50</text>
-  </g>
-
-  <!-- 6. SWEEPING CENTER LASER SCANLINE -->
-  <g filter="url(#laserGlow)">
-    <line x1="280" y1="85" x2="920" y2="85" stroke="url(#laserAzure)" stroke-width="2.2">
-      <animateTransform
-        attributeName="transform"
-        type="translate"
-        values="0, 0; 0, 200; 0, 0"
-        dur="3.6s"
-        repeatCount="indefinite"
-        calcMode="spline"
-        keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"
-        keyTimes="0; 0.5; 1"
-      />
-    </line>
-  </g>
-
-  <!-- 7. CENTER STAGE: BOLD CYBERNETIC TYPOGRAPHY -->
-  <g transform="translate(600, 115)" text-anchor="middle">
-    <!-- Top Category Eyebrow -->
-    <text x="0" y="0" class="mono-meta">
-      <tspan fill="#38bdf8">//</tspan> REVERSED AUTONOMOUS PROTOCOL <tspan fill="#818cf8">//</tspan>
+  <!-- 2. CHROMATIC ABERRATION GLITCH WORDMARK -->
+  <g transform="translate(340, 80)">
+    <!-- Layer 1: Cyan Channel (Left Jitter) -->
+    <text x="0" y="0" text-anchor="middle" class="wordmark-main" fill="#38bdf8" opacity="0.9" filter="url(#glitchDisplace)">
+      MS PLAYGROUND
+      <animate attributeName="dx" dur="4.0s" repeatCount="indefinite"
+        keyTimes="0; 0.28; 0.30; 0.32; 0.34; 0.36; 0.70; 0.72; 0.74; 0.76; 0.78; 1"
+        values="0; 0; -6; 3; -4; 0; 0; 5; -6; 2; 0; 0" />
+      <animate attributeName="dy" dur="4.0s" repeatCount="indefinite"
+        keyTimes="0; 0.30; 0.32; 0.34; 0.72; 0.74; 0.76; 1"
+        values="0; -2; 1; 0; 1.5; -1; 0; 0" />
     </text>
 
-    <!-- Main Wordmark -->
-    <text x="0" y="58" class="wordmark-main" fill="url(#titleGrad)" filter="url(#neonBloom)">
-      MICROSOFT AI
-    </text>
-    <text x="0" y="122" class="wordmark-main" fill="url(#titleGrad)">
-      PLAYGROUND
+    <!-- Layer 2: Violet Channel (Right Jitter) -->
+    <text x="0" y="0" text-anchor="middle" class="wordmark-main" fill="#818cf8" opacity="0.9" filter="url(#glitchDisplace)">
+      MS PLAYGROUND
+      <animate attributeName="dx" dur="4.0s" repeatCount="indefinite"
+        keyTimes="0; 0.28; 0.30; 0.32; 0.34; 0.36; 0.70; 0.72; 0.74; 0.76; 0.78; 1"
+        values="0; 0; 6; -3; 4; 0; 0; -5; 6; -2; 0; 0" />
+      <animate attributeName="dy" dur="4.0s" repeatCount="indefinite"
+        keyTimes="0; 0.30; 0.32; 0.34; 0.72; 0.74; 0.76; 1"
+        values="0; 2; -1; 0; -1.5; 1; 0; 0" />
     </text>
 
-    <!-- Subtitle Spec -->
-    <text x="0" y="160" fill="url(#subTitleGrad)" class="submark">
-      DIFFUSION • 24kHZ VOICE • SPEECH ASR • 120B REALTIME
+    <!-- Layer 3: Solid Sharp White Core -->
+    <text x="0" y="0" text-anchor="middle" class="wordmark-main" fill="#ffffff">
+      MS PLAYGROUND
+      <animate attributeName="opacity" dur="4.0s" repeatCount="indefinite"
+        keyTimes="0; 0.30; 0.32; 0.34; 0.72; 0.74; 0.76; 1"
+        values="1; 0.88; 1; 0.92; 0.85; 1; 0.90; 1" />
     </text>
+  </g>
+
+  <!-- 3. METALLIC SHIMMER SUBTITLE -->
+  <text x="340" y="122" text-anchor="middle" class="submark" fill="url(#subtitleShimmer)">
+    REVERSED PROTOCOL &amp; REALTIME SDK
+    <animate attributeName="dx" dur="4.0s" repeatCount="indefinite"
+      keyTimes="0; 0.28; 0.30; 0.32; 0.34; 0.70; 0.72; 0.74; 0.76; 1"
+      values="0; 0; -2.5; 1.5; 0; 0; 2.5; -1.5; 0; 0" />
+    <animate attributeName="opacity" dur="4.5s" repeatCount="indefinite"
+      values="0.82; 1.0; 0.82" />
+  </text>
+
+  <!-- 4. TECH SUITE HIGHLIGHTS (COLOR CODED) -->
+  <g transform="translate(340, 150)">
+    <text x="0" y="0" text-anchor="middle" class="mono-meta">
+      <tspan fill="#0078d4">mai-image-2.6</tspan>  <tspan fill="#334155">•</tspan>  <tspan fill="#10b981">mai-transcribe-2 (33.7x)</tspan>  <tspan fill="#334155">•</tspan>  <tspan fill="#38bdf8">WISPR FLOW</tspan>  <tspan fill="#334155">•</tspan>  <tspan fill="#818cf8">FALCON 120B</tspan>  <tspan fill="#334155">•</tspan>  <tspan fill="#fbbf24">mai-voice-2</tspan>
+    </text>
+  </g>
+
+  <!-- 5. LOTTIE HARMONIC AUDIO EQUALIZER (32 BARS) -->
+  <g filter="url(#neonBloom)">
+      <rect x="141.6" y="224.7" width="4.6" height="5.3" rx="2.2" fill="url(#eqAzure)">
+        <animate attributeName="height" dur="1.10s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="5.3; 14.3; 10.1; 15.9; 5.3" />
+        <animate attributeName="y" dur="1.10s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="224.7; 215.7; 219.9; 214.1; 224.7" />
+      </rect>
+      <rect x="154.4" y="224.6" width="4.6" height="5.4" rx="2.2" fill="url(#eqViolet)">
+        <animate attributeName="height" dur="1.35s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="5.4; 15.1; 10.6; 16.9; 5.4" />
+        <animate attributeName="y" dur="1.35s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="224.6; 214.9; 219.4; 213.1; 224.6" />
+      </rect>
+      <rect x="167.2" y="224.4" width="4.6" height="5.6" rx="2.2" fill="url(#eqCyan)">
+        <animate attributeName="height" dur="0.95s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="5.6; 16.2; 11.2; 18.1; 5.6" />
+        <animate attributeName="y" dur="0.95s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="224.4; 213.8; 218.8; 211.9; 224.4" />
+      </rect>
+      <rect x="180.0" y="224.3" width="4.6" height="5.7" rx="2.2" fill="url(#eqAzure)">
+        <animate attributeName="height" dur="1.50s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="5.7; 17.4; 11.9; 19.5; 5.7" />
+        <animate attributeName="y" dur="1.50s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="224.3; 212.6; 218.1; 210.5; 224.3" />
+      </rect>
+      <rect x="192.8" y="224.1" width="4.6" height="5.9" rx="2.2" fill="url(#eqViolet)">
+        <animate attributeName="height" dur="1.25s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="5.9; 18.8; 12.7; 21.2; 5.9" />
+        <animate attributeName="y" dur="1.25s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="224.1; 211.2; 217.3; 208.8; 224.1" />
+      </rect>
+      <rect x="205.6" y="223.9" width="4.6" height="6.1" rx="2.2" fill="url(#eqCyan)">
+        <animate attributeName="height" dur="1.65s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="6.1; 20.4; 13.6; 23.0; 6.1" />
+        <animate attributeName="y" dur="1.65s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="223.9; 209.6; 216.4; 207.0; 223.9" />
+      </rect>
+      <rect x="218.4" y="223.7" width="4.6" height="6.3" rx="2.2" fill="url(#eqAzure)">
+        <animate attributeName="height" dur="1.05s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="6.3; 22.2; 14.7; 25.1; 6.3" />
+        <animate attributeName="y" dur="1.05s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="223.7; 207.8; 215.3; 204.9; 223.7" />
+      </rect>
+      <rect x="231.2" y="223.5" width="4.6" height="6.5" rx="2.2" fill="url(#eqViolet)">
+        <animate attributeName="height" dur="1.40s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="6.5; 24.1; 15.8; 27.3; 6.5" />
+        <animate attributeName="y" dur="1.40s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="223.5; 205.9; 214.2; 202.7; 223.5" />
+      </rect>
+      <rect x="244.0" y="223.3" width="4.6" height="6.7" rx="2.2" fill="url(#eqCyan)">
+        <animate attributeName="height" dur="1.15s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="6.7; 26.1; 16.9; 29.6; 6.7" />
+        <animate attributeName="y" dur="1.15s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="223.3; 203.9; 213.1; 200.4; 223.3" />
+      </rect>
+      <rect x="256.8" y="223.0" width="4.6" height="7.0" rx="2.2" fill="url(#eqAzure)">
+        <animate attributeName="height" dur="1.30s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="7.0; 28.1; 18.1; 31.9; 7.0" />
+        <animate attributeName="y" dur="1.30s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="223.0; 201.9; 211.9; 198.1; 223.0" />
+      </rect>
+      <rect x="269.6" y="222.8" width="4.6" height="7.2" rx="2.2" fill="url(#eqViolet)">
+        <animate attributeName="height" dur="1.70s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="7.2; 30.1; 19.3; 34.2; 7.2" />
+        <animate attributeName="y" dur="1.70s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="222.8; 199.9; 210.7; 195.8; 222.8" />
+      </rect>
+      <rect x="282.4" y="222.6" width="4.6" height="7.4" rx="2.2" fill="url(#eqCyan)">
+        <animate attributeName="height" dur="0.90s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="7.4; 31.9; 20.3; 36.3; 7.4" />
+        <animate attributeName="y" dur="0.90s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="222.6; 198.1; 209.7; 193.7; 222.6" />
+      </rect>
+      <rect x="295.2" y="222.4" width="4.6" height="7.6" rx="2.2" fill="url(#eqAzure)">
+        <animate attributeName="height" dur="1.45s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="7.6; 33.5; 21.3; 38.2; 7.6" />
+        <animate attributeName="y" dur="1.45s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="222.4; 196.5; 208.7; 191.8; 222.4" />
+      </rect>
+      <rect x="308.0" y="222.2" width="4.6" height="7.8" rx="2.2" fill="url(#eqViolet)">
+        <animate attributeName="height" dur="1.20s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="7.8; 34.9; 22.1; 39.8; 7.8" />
+        <animate attributeName="y" dur="1.20s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="222.2; 195.1; 207.9; 190.2; 222.2" />
+      </rect>
+      <rect x="320.8" y="222.1" width="4.6" height="7.9" rx="2.2" fill="url(#eqCyan)">
+        <animate attributeName="height" dur="1.60s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="7.9; 35.9; 22.7; 41.0; 7.9" />
+        <animate attributeName="y" dur="1.60s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="222.1; 194.1; 207.3; 189.0; 222.1" />
+      </rect>
+      <rect x="333.6" y="222.0" width="4.6" height="8.0" rx="2.2" fill="url(#eqAzure)">
+        <animate attributeName="height" dur="1.10s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="8.0; 36.6; 23.1; 41.7; 8.0" />
+        <animate attributeName="y" dur="1.10s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="222.0; 193.4; 206.9; 188.3; 222.0" />
+      </rect>
+      <rect x="346.4" y="222.0" width="4.6" height="8.0" rx="2.2" fill="url(#eqViolet)">
+        <animate attributeName="height" dur="1.25s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="8.0; 36.8; 23.2; 42.0; 8.0" />
+        <animate attributeName="y" dur="1.25s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="222.0; 193.2; 206.8; 188.0; 222.0" />
+      </rect>
+      <rect x="359.2" y="222.0" width="4.6" height="8.0" rx="2.2" fill="url(#eqCyan)">
+        <animate attributeName="height" dur="1.55s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="8.0; 36.6; 23.1; 41.7; 8.0" />
+        <animate attributeName="y" dur="1.55s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="222.0; 193.4; 206.9; 188.3; 222.0" />
+      </rect>
+      <rect x="372.0" y="222.1" width="4.6" height="7.9" rx="2.2" fill="url(#eqAzure)">
+        <animate attributeName="height" dur="1.00s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="7.9; 35.9; 22.7; 41.0; 7.9" />
+        <animate attributeName="y" dur="1.00s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="222.1; 194.1; 207.3; 189.0; 222.1" />
+      </rect>
+      <rect x="384.8" y="222.2" width="4.6" height="7.8" rx="2.2" fill="url(#eqViolet)">
+        <animate attributeName="height" dur="1.40s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="7.8; 34.9; 22.1; 39.8; 7.8" />
+        <animate attributeName="y" dur="1.40s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="222.2; 195.1; 207.9; 190.2; 222.2" />
+      </rect>
+      <rect x="397.6" y="222.4" width="4.6" height="7.6" rx="2.2" fill="url(#eqCyan)">
+        <animate attributeName="height" dur="1.15s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="7.6; 33.5; 21.3; 38.2; 7.6" />
+        <animate attributeName="y" dur="1.15s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="222.4; 196.5; 208.7; 191.8; 222.4" />
+      </rect>
+      <rect x="410.4" y="222.6" width="4.6" height="7.4" rx="2.2" fill="url(#eqAzure)">
+        <animate attributeName="height" dur="1.65s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="7.4; 31.9; 20.3; 36.3; 7.4" />
+        <animate attributeName="y" dur="1.65s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="222.6; 198.1; 209.7; 193.7; 222.6" />
+      </rect>
+      <rect x="423.2" y="222.8" width="4.6" height="7.2" rx="2.2" fill="url(#eqViolet)">
+        <animate attributeName="height" dur="0.95s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="7.2; 30.1; 19.3; 34.2; 7.2" />
+        <animate attributeName="y" dur="0.95s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="222.8; 199.9; 210.7; 195.8; 222.8" />
+      </rect>
+      <rect x="436.0" y="223.0" width="4.6" height="7.0" rx="2.2" fill="url(#eqCyan)">
+        <animate attributeName="height" dur="1.35s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="7.0; 28.1; 18.1; 31.9; 7.0" />
+        <animate attributeName="y" dur="1.35s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="223.0; 201.9; 211.9; 198.1; 223.0" />
+      </rect>
+      <rect x="448.8" y="223.3" width="4.6" height="6.7" rx="2.2" fill="url(#eqAzure)">
+        <animate attributeName="height" dur="1.20s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="6.7; 26.1; 16.9; 29.6; 6.7" />
+        <animate attributeName="y" dur="1.20s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="223.3; 203.9; 213.1; 200.4; 223.3" />
+      </rect>
+      <rect x="461.6" y="223.5" width="4.6" height="6.5" rx="2.2" fill="url(#eqViolet)">
+        <animate attributeName="height" dur="1.50s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="6.5; 24.1; 15.8; 27.3; 6.5" />
+        <animate attributeName="y" dur="1.50s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="223.5; 205.9; 214.2; 202.7; 223.5" />
+      </rect>
+      <rect x="474.4" y="223.7" width="4.6" height="6.3" rx="2.2" fill="url(#eqCyan)">
+        <animate attributeName="height" dur="1.05s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="6.3; 22.2; 14.7; 25.1; 6.3" />
+        <animate attributeName="y" dur="1.05s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="223.7; 207.8; 215.3; 204.9; 223.7" />
+      </rect>
+      <rect x="487.2" y="223.9" width="4.6" height="6.1" rx="2.2" fill="url(#eqAzure)">
+        <animate attributeName="height" dur="1.45s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="6.1; 20.4; 13.6; 23.0; 6.1" />
+        <animate attributeName="y" dur="1.45s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="223.9; 209.6; 216.4; 207.0; 223.9" />
+      </rect>
+      <rect x="500.0" y="224.1" width="4.6" height="5.9" rx="2.2" fill="url(#eqViolet)">
+        <animate attributeName="height" dur="1.30s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="5.9; 18.8; 12.7; 21.2; 5.9" />
+        <animate attributeName="y" dur="1.30s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="224.1; 211.2; 217.3; 208.8; 224.1" />
+      </rect>
+      <rect x="512.8" y="224.3" width="4.6" height="5.7" rx="2.2" fill="url(#eqCyan)">
+        <animate attributeName="height" dur="1.60s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="5.7; 17.4; 11.9; 19.5; 5.7" />
+        <animate attributeName="y" dur="1.60s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="224.3; 212.6; 218.1; 210.5; 224.3" />
+      </rect>
+      <rect x="525.6" y="224.4" width="4.6" height="5.6" rx="2.2" fill="url(#eqAzure)">
+        <animate attributeName="height" dur="1.15s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="5.6; 16.2; 11.2; 18.1; 5.6" />
+        <animate attributeName="y" dur="1.15s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="224.4; 213.8; 218.8; 211.9; 224.4" />
+      </rect>
+      <rect x="538.4" y="224.6" width="4.6" height="5.4" rx="2.2" fill="url(#eqViolet)">
+        <animate attributeName="height" dur="1.25s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="5.4; 15.1; 10.6; 16.9; 5.4" />
+        <animate attributeName="y" dur="1.25s" repeatCount="indefinite" calcMode="spline"
+          keyTimes="0; 0.25; 0.50; 0.75; 1"
+          keySplines="0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1; 0.16 1 0.3 1"
+          values="224.6; 214.9; 219.4; 213.1; 224.6" />
+      </rect>
   </g>
 </svg>
