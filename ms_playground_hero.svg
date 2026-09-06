@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1020 280" role="img" aria-label="Microsoft AI Playground API Hero">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 280" width="1020" height="280" role="img" aria-label="Microsoft AI Playground API Hero">
   <defs>
     <!-- Soft Volumetric 3D Matte Sphere Shading (Head) -->
     <radialGradient id="sphereHeadMatte" cx="36%" cy="28%" r="68%" fx="30%" fy="22%">
